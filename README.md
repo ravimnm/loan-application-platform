@@ -660,6 +660,38 @@ against the configured threshold of:
 
 Therefore, the load test demonstrates good request reliability under load, but also identifies **latency and scalability as an area for further optimization**.
 
+### Additional Run — `user-load-test.js`
+
+A second k6 run targeting the user-facing endpoints, ramping up to 1,000 VUs over 3m30s:
+
+```text
+Total requests:        114,088
+Request rate:          ~543 requests/sec
+
+Checks succeeded:      100.00%
+Checks failed:         0.00%
+
+HTTP failure rate:     0.00%
+
+Average latency:       1.01 s
+Median latency:        932.34 ms
+P90 latency:           1.93 s
+P95 latency:            2.04 s
+Maximum latency:       3.17 s
+
+Data received:         134 MB (636 kB/s)
+Data sent:              39 MB (186 kB/s)
+```
+
+Threshold results:
+
+```text
+http_req_duration: p(95)<1000  → FAILED (p(95) = 2.04s)
+http_req_failed:   rate<0.01   → PASSED (rate = 0.00%)
+```
+
+This run shows a meaningfully better P95 (2.04s vs. 4.12s in the earlier admin-focused run) and a higher sustained throughput (~543 req/s), with zero failed requests. However, the `p(95)<1000ms` latency threshold was still **not met**, confirming that request reliability is solid but response-time performance under load remains an open optimization target.
+
 ---
 
 ## Performance Optimization Opportunities
