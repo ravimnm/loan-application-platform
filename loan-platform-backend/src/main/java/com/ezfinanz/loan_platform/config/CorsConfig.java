@@ -19,6 +19,7 @@ public class CorsConfig {
 
         configuration.setAllowedOrigins(
                 List.of(
+                        "https://loan-application-platform-brown.vercel.app",
                         "http://localhost:5173"
                 )
         );
