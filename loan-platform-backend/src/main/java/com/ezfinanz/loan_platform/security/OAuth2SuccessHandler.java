@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -22,6 +23,9 @@ public class OAuth2SuccessHandler
 
     private final UserRepository userRepository;
     private final JwtService jwtService;
+
+    @Value("${app.frontend-url}")
+    private String frontendUrl;
 
     public OAuth2SuccessHandler(
             UserRepository userRepository,
@@ -85,20 +89,20 @@ public class OAuth2SuccessHandler
         UserDetails userDetails =
                 org.springframework.security.core.userdetails.User
                         .withUsername(user.getEmail())
-                        .password(user.getPassword() == null
-                                ? ""
-                                : user.getPassword())
+                        .password(
+                                user.getPassword() == null
+                                        ? ""
+                                        : user.getPassword()
+                        )
                         .roles(user.getRole().name())
                         .build();
 
         String token =
                 jwtService.generateToken(userDetails);
 
-        String frontendUrl =
-                "http://localhost:5173/oauth2/callback";
-
         String redirectUrl =
                 frontendUrl +
+                "/oauth2/callback" +
                 "?token=" + token +
                 "&userId=" + user.getId() +
                 "&email=" + user.getEmail() +
