@@ -25,6 +25,7 @@ const stageLabels: Record<ApplicationStage, string> = {
   ADMIN_REVIEW: 'Admin Review',
   DISBURSEMENT: 'Disbursement',
   COMPLETED: 'Completed',
+
 };
 
 const statusLabels: Record<ApplicationStatus, string> = {
@@ -38,6 +39,7 @@ const statusLabels: Record<ApplicationStatus, string> = {
   REJECTED: 'Rejected',
   DISBURSED: 'Disbursed',
   WITHDRAWN: 'Withdrawn',
+  IN_PROGRESS: 'In Progress',
 };
 
 const formatDate = (value?: string): string => {
