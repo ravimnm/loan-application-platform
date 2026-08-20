@@ -419,6 +419,73 @@ export const Home: React.FC = () => {
 
         </div>
       </section>
+      <section className="home-section home-performance">
+        <div className="home-section-header">
+          <span className="home-eyebrow">
+            Performance & reliability
+          </span>
+
+          <h2>
+            Tested under real load
+          </h2>
+
+          <p>
+            EZFinanz was load tested with up to 1,000 concurrent
+            virtual users using k6 to evaluate API reliability and
+            response performance.
+          </p>
+        </div>
+
+        <div className="home-performance-grid">
+
+          <article className="home-metric-card">
+            <strong>1,000</strong>
+            <span>Max concurrent users</span>
+          </article>
+
+          <article className="home-metric-card">
+            <strong>114K+</strong>
+            <span>Requests processed</span>
+          </article>
+
+          <article className="home-metric-card">
+            <strong>543</strong>
+            <span>Requests / second</span>
+          </article>
+
+          <article className="home-metric-card">
+            <strong>0%</strong>
+            <span>HTTP request failures</span>
+          </article>
+
+          <article className="home-metric-card">
+            <strong>2.04s</strong>
+            <span>P95 latency</span>
+          </article>
+
+          <article className="home-metric-card">
+            <strong>3.17s</strong>
+            <span>Maximum latency</span>
+          </article>
+
+        </div>
+
+        <div className="home-performance-note">
+          <strong>Load test result</strong>
+
+          <p>
+            The platform maintained a 0% HTTP failure rate while
+            processing approximately 543 requests per second.
+            The measured P95 latency was 2.04 seconds, indicating
+            that further response-time optimization is an area for
+            continued improvement.
+          </p>
+
+          <span>
+            Tested with k6 · 1,000 virtual users · 3m 30s
+          </span>
+        </div>
+      </section>
 
 
       {/* =========================================================
