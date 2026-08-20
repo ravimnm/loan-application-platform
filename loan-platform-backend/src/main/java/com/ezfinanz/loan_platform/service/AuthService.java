@@ -162,6 +162,25 @@ public class AuthService {
 	            "Registration successful. Please verify your email and phone."
 	    );
 	}
+	
+	public AuthResponse getCurrentUser(String email) {
+
+	    User user =
+	            userRepository
+	                    .findByEmail(email)
+	                    .orElseThrow(() ->
+	                            new RuntimeException(
+	                                    "User not found"
+	                            )
+	                    );
+
+	    return new AuthResponse(
+	            null,
+	            user.getId(),
+	            user.getEmail(),
+	            user.getRole().name()
+	    );
+	}
 
 	public AuthResponse login(LoginRequest request) {
 

@@ -22,6 +22,18 @@ public class AuthController {
     public AuthController(AuthService authService) {
     	this.authService=authService;
     }
+    
+    @GetMapping("/me")
+    public ResponseEntity<AuthResponse> me(
+            Authentication authentication
+    ) {
+
+        return ResponseEntity.ok(
+                authService.getCurrentUser(
+                        authentication.getName()
+                )
+        );
+    }
 
     @PostMapping("/register")
     public ResponseEntity<RegistrationResponse> register(

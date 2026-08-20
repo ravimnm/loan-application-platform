@@ -17,7 +17,7 @@ import { Login } from '../pages/auth/Login';
 import { Register } from '../pages/auth/Register';
 import { VerifyEmail } from '../pages/auth/VerifyEmail';
 import { VerifyPhone } from '../pages/auth/VerifyPhone';
-
+import { OAuth2Callback } from '../pages/auth/OAuth2Callback';
 // Customer layout
 import { CustomerLayout } from '../layouts/CustomerLayout';
 
@@ -76,6 +76,11 @@ export const AppRoutes: React.FC = () => {
           <Route
             path="/login"
             element={<Login />}
+          />
+
+          <Route
+            path="/oauth2/callback"
+            element={<OAuth2Callback />}
           />
 
           <Route

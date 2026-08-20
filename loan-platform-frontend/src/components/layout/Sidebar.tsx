@@ -1,13 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-interface SidebarProps {
+interface CustomerSidebarProps {
   children?: React.ReactNode;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ children }) => {
+export const CustomerSidebar: React.FC<CustomerSidebarProps> = ({
+  children,
+}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <aside className="sidebar">
-      {children}
-    </aside>
+    <>
+      <button
+        type="button"
+        className="mobile-sidebar-toggle"
+        onClick={() => setIsOpen((previous) => !previous)}
+        aria-label="Toggle navigation"
+        aria-expanded={isOpen}
+      >
+        =
+      </button>
+
+      <aside
+        className={`customer-sidebar ${
+          isOpen ? 'mobile-sidebar-open' : ''
+        }`}
+      >
+        {children}
+      </aside>
+    </>
   );
 };

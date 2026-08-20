@@ -17,3 +17,33 @@
   color: #666;
   margin: 0 0 12px 0;
 }
+
+/* Application action buttons */
+
+.application-card button,
+.application-actions button {
+  border: 1px solid #0f2747;
+  border-radius: 7px;
+
+  background: #0f2747;
+  color: #ffffff;
+
+  padding: 10px 16px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.application-card button:hover,
+.application-actions button:hover {
+  background: #0a1b33;
+  border-color: #0a1b33;
+}
+
+.application-card button:active,
+.application-actions button:active {
+  transform: translateY(1px);
+}

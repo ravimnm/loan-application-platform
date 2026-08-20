@@ -15,14 +15,31 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String phone;
 
     @JsonIgnore
-    @Column(nullable = false)
     private String password;
+    
+    private String fullName;
 
-    @Enumerated(EnumType.STRING)
+    public String getOauthProvider() {
+		return oauthProvider;
+	}
+
+	public void setOauthProvider(String oauthProvider) {
+		this.oauthProvider = oauthProvider;
+	}
+
+	public String getOauthProviderId() {
+		return oauthProviderId;
+	}
+
+	public void setOauthProviderId(String oauthProviderId) {
+		this.oauthProviderId = oauthProviderId;
+	}
+
+	@Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
 
@@ -37,6 +54,12 @@ public class User {
 
     @Column(nullable = false)
     private boolean enabled;
+    
+    @Column
+    private String oauthProvider;
+
+    @Column
+    private String oauthProviderId;
     
     public User() {
     }
@@ -139,5 +162,13 @@ public class User {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+	public String getFullName() {
+		return fullName;
+	}
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
     
 }

@@ -50,4 +50,14 @@ export const authApi = {
     const response = await client.post<string>('/api/auth/verify-phone', data);
     return response.data;
   },
+
+  me: async (): Promise<AuthResponse> => {
+
+    const response =
+      await client.get<AuthResponse>(
+        '/api/auth/me'
+      );
+
+    return response.data;
+  },
 };

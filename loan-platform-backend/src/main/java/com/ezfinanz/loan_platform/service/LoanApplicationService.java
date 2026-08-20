@@ -8,7 +8,9 @@ import com.ezfinanz.loan_platform.entity.User;
 import com.ezfinanz.loan_platform.repository.LoanApplicationRepository;
 import com.ezfinanz.loan_platform.repository.UserRepository;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -108,12 +110,8 @@ public class LoanApplicationService {
                 userRepository
                         .findByEmail(email)
                         .orElseThrow(() ->
-                                new RuntimeException(
-                                        "User not found"
-                                )
+                                new RuntimeException("User not found")
                         );
-
-        
 
         return applicationRepository
                 .findFirstByUserAndStatusInOrderByCreatedAtDesc(
@@ -121,7 +119,8 @@ public class LoanApplicationService {
                         ACTIVE_STATUSES
                 )
                 .orElseThrow(() ->
-                        new RuntimeException(
+                        new ResponseStatusException(
+                                HttpStatus.NOT_FOUND,
                                 "No active loan application found"
                         )
                 );

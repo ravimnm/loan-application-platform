@@ -1,6 +1,7 @@
 package com.ezfinanz.loan_platform.config;
 
 import com.ezfinanz.loan_platform.security.JwtAuthenticationFilter;
+import com.ezfinanz.loan_platform.security.OAuth2SuccessHandler;
 import com.ezfinanz.loan_platform.service.CustomUserDetailsService;
 
 import org.springframework.context.annotation.Bean;
@@ -22,16 +23,19 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-
+	
+	private final OAuth2SuccessHandler oauth2SuccessHandler;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final CustomUserDetailsService userDetailsService;
 
     public SecurityConfig(
             JwtAuthenticationFilter jwtAuthenticationFilter,
-            CustomUserDetailsService userDetailsService
+            CustomUserDetailsService userDetailsService,
+            OAuth2SuccessHandler oauth2SuccessHandler
     ) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
         this.userDetailsService = userDetailsService;
+        this.oauth2SuccessHandler = oauth2SuccessHandler;
     }
 
     @Bean
@@ -75,7 +79,7 @@ public class SecurityConfig {
 
             .sessionManagement(session ->
                     session.sessionCreationPolicy(
-                            SessionCreationPolicy.STATELESS
+                            SessionCreationPolicy.IF_REQUIRED
                     )
             )
 
@@ -90,6 +94,11 @@ public class SecurityConfig {
                             "/api/auth/login",
                             "/api/auth/verify-email",
                             "/api/auth/verify-phone"
+                    ).permitAll()
+                    
+                    .requestMatchers(
+                            "/oauth2/**",
+                            "/login/**"
                     ).permitAll()
 
                     .requestMatchers(
@@ -132,6 +141,10 @@ public class SecurityConfig {
             .authenticationProvider(
                     authenticationProvider()
             )
+            .oauth2Login(oauth2 ->
+		            oauth2
+		                    .successHandler(oauth2SuccessHandler)
+		    )
 
             .addFilterBefore(
                     jwtAuthenticationFilter,
