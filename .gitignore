@@ -1,10 +1,13 @@
 # ===============================
 # Environment / Secrets
 # ===============================
-loan-application/.env
-loan-application/.env.*
+**loan-application/.env
+**loan-application/.env.*
 !loan-application/.env.example
 
+**/.env
+**/.env.*
+!**/.env.example
 # ===============================
 # Java / Maven
 # ===============================
