@@ -1,0 +1,189 @@
+/* Progress Indicator Styles */
+.progress-container {
+  background: var(--surface, #ffffff);
+  border: 1px solid var(--border-color, #e4e7ec);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.progress-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary, #172033);
+  margin: 0;
+}
+
+.progress-status {
+  font-size: 14px;
+  color: var(--text-secondary, #667085);
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.status-badge.status-final {
+  background: linear-gradient(135deg, var(--primary, #0f2747) 0%, var(--primary-hover, #0a1b33) 100%);
+  color: white;
+}
+
+.progress-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.progress-stage {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+  position: relative;
+}
+
+.stage-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+  border: 2px solid var(--border-color, #e4e7ec);
+  background: var(--surface, #ffffff);
+  color: var(--text-secondary, #667085);
+  z-index: 2;
+}
+
+.stage-dot.completed {
+  background: linear-gradient(135deg, var(--success-color, #16a34a) 0%, #15803d 100%);
+  color: white;
+  border-color: var(--success-color, #16a34a);
+}
+
+.stage-dot.current {
+  background: linear-gradient(135deg, var(--primary, #0f2747) 0%, var(--primary-hover, #0a1b33) 100%);
+  color: white;
+  border-color: var(--primary, #0f2747);
+  box-shadow: 0 0 0 3px rgba(15, 39, 71, 0.1);
+}
+
+.stage-dot.upcoming {
+  background: var(--background, #f7f9fc);
+  color: var(--text-secondary, #667085);
+  border-color: var(--border-color, #e4e7ec);
+}
+
+.stage-label {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.stage-name {
+  font-weight: 600;
+  color: var(--text-primary, #172033);
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.stage-description {
+  font-size: 13px;
+  color: var(--text-secondary, #667085);
+}
+
+.stage-label.active .stage-name {
+  color: var(--primary, #0f2747);
+}
+
+.stage-connector {
+  position: absolute;
+  left: 19px;
+  top: 40px;
+  width: 2px;
+  height: calc(100% + 12px);
+  background: var(--border-color, #e4e7ec);
+  z-index: 1;
+}
+
+.stage-connector.completed {
+  background: linear-gradient(to bottom, var(--success-color, #16a34a), var(--success-color, #16a34a));
+}
+
+.progress-legend {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color, #e4e7ec);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary, #667085);
+}
+
+.legend-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.legend-dot.completed {
+  background: linear-gradient(135deg, var(--success-color, #16a34a) 0%, #15803d 100%);
+  color: white;
+}
+
+.legend-dot.current {
+  background: linear-gradient(135deg, var(--primary, #0f2747) 0%, var(--primary-hover, #0a1b33) 100%);
+  color: white;
+}
+
+.legend-dot.upcoming {
+  background: var(--background, #f7f9fc);
+  color: var(--text-secondary, #667085);
+  border: 1px solid var(--border-color, #e4e7ec);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .progress-container {
+    padding: 16px;
+  }
+
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .progress-timeline {
+    gap: 0;
+  }
+
+  .progress-legend {
+    gap: 16px;
+  }
+}

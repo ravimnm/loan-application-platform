@@ -1,0 +1,973 @@
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
+.home-page {
+  min-height: 100vh;
+  background: #f7f9fc;
+  color: #172033;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.home-nav {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 22px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.home-brand {
+  color: #0f2747;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.home-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.home-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 0 20px;
+
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.home-page .btn:hover {
+  transform: translateY(-1px);
+}
+
+.home-page .btn-primary {
+  background: #0f2747;
+  color: #ffffff;
+}
+
+.home-page .btn-primary:hover {
+  background: #0a1b33;
+}
+
+.home-page .btn-secondary {
+  background: #ffffff;
+  color: #0f2747;
+  border-color: #b8deda;
+}
+
+.home-page .btn-secondary:hover {
+  background: #eef9f7;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.home-hero {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 82px 0 76px;
+}
+
+.home-hero-content {
+  max-width: 850px;
+}
+
+.home-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: #0f9d8a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #0f2747;
+
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 750;
+}
+
+.home-hero h1 span {
+  color: #0f9d8a;
+}
+
+.home-hero p {
+  max-width: 720px;
+
+  margin: 24px 0 0;
+
+  color: #667085;
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HERO ACTIONS
+   ========================================================= */
+
+.home-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.home-hero-actions .btn {
+  width: auto;
+  min-width: 160px;
+}
+
+/* =========================================================
+   HERO TRUST POINTS
+   ========================================================= */
+
+.home-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  margin-top: 28px;
+}
+
+.home-hero-point {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #667085;
+  font-size: 13px;
+}
+
+.home-hero-point::before {
+  content: "✓";
+
+  color: #0f9d8a;
+  font-weight: 800;
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.home-section {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 72px 0;
+
+  border-top: 1px solid #e4e7ec;
+}
+
+.home-section-header {
+  max-width: 700px;
+  margin-bottom: 32px;
+}
+
+.home-section-header .home-eyebrow {
+  margin-bottom: 10px;
+}
+
+.home-section-header h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.home-section-header p {
+  margin: 12px 0 0;
+
+  color: #667085;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FEATURE GRID
+   ========================================================= */
+
+.home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+.home-feature-card {
+  min-height: 180px;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+
+  box-shadow: 0 6px 18px rgba(15, 39, 71, 0.04);
+}
+
+.home-feature-card h3 {
+  margin: 0 0 10px;
+
+  color: #0f2747;
+
+  font-size: 17px;
+}
+
+.home-feature-card p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   PLATFORM HIGHLIGHT
+   ========================================================= */
+
+.home-highlight {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 0 0 72px;
+}
+
+.home-highlight-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+
+  gap: 40px;
+
+  padding: 36px;
+
+  background: #0f2747;
+  border-radius: 14px;
+
+  color: #ffffff;
+}
+
+.home-highlight-card h2 {
+  margin: 0 0 12px;
+
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.home-highlight-card p {
+  margin: 0;
+
+  color: #d9e2ef;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.home-highlight-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.home-highlight-item {
+  padding: 16px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+.home-highlight-item strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.home-highlight-item span {
+  color: #b9c7d9;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PERFORMANCE / LOAD TEST SECTION
+   ========================================================= */
+
+.home-performance {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 72px 0;
+
+  border-top: 1px solid #e4e7ec;
+}
+
+.home-performance-header {
+  max-width: 700px;
+  margin-bottom: 28px;
+}
+
+.home-performance-header h2 {
+  margin: 0 0 10px;
+
+  color: #172033;
+
+  font-size: 30px;
+  letter-spacing: -0.025em;
+}
+
+.home-performance-header p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.home-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.home-metric-card {
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+}
+
+.home-metric-card span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #667085;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.home-metric-card strong {
+  display: block;
+
+  color: #0f2747;
+
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.home-metric-note {
+  margin-top: 20px;
+
+  color: #667085;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ROLES
+   ========================================================= */
+
+.home-roles {
+  padding-top: 72px;
+}
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.home-cta {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 72px 0;
+}
+
+.home-cta-card {
+  padding: 48px;
+
+  text-align: center;
+
+  background: #eef9f7;
+
+  border: 1px solid #b8deda;
+  border-radius: 14px;
+}
+
+.home-cta-card h2 {
+  margin: 0 0 10px;
+
+  color: #0f2747;
+
+  font-size: 30px;
+  letter-spacing: -0.025em;
+}
+
+.home-cta-card p {
+  max-width: 600px;
+
+  margin: 0 auto 24px;
+
+  color: #667085;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.home-cta-card .btn {
+  min-width: 180px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.home-footer {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 28px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #e4e7ec;
+
+  color: #667085;
+  font-size: 13px;
+}
+
+.home-footer strong {
+  color: #0f2747;
+  font-size: 15px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .home-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-highlight-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+
+  .home-nav {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .home-nav-actions .btn {
+    min-width: 0;
+    padding: 0 14px;
+  }
+
+  .home-hero,
+  .home-section,
+  .home-highlight,
+  .home-performance,
+  .home-cta,
+  .home-footer {
+    width: min(100% - 32px, 1120px);
+  }
+
+  .home-hero {
+    padding: 56px 0 52px;
+  }
+
+  .home-hero h1 {
+    font-size: 43px;
+  }
+
+  .home-hero p {
+    font-size: 15px;
+  }
+
+  .home-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-hero-actions .btn {
+    width: 100%;
+  }
+
+  .home-hero-points {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .home-section,
+  .home-performance,
+  .home-cta {
+    padding: 52px 0;
+  }
+
+  .home-section-header h2,
+  .home-performance-header h2 {
+    font-size: 26px;
+  }
+
+  .home-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home-highlight-card {
+    padding: 26px;
+  }
+
+  .home-highlight-list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-cta-card {
+    padding: 32px 22px;
+  }
+
+  .home-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+
+  .home-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero h1 {
+    font-size: 38px;
+  }
+
+  .home-nav-actions {
+    gap: 6px;
+  }
+
+  .home-nav-actions .btn {
+    padding: 0 11px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   APPLICATION WORKFLOW
+   ========================================================= */
+
+.home-workflow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.home-workflow-card {
+  position: relative;
+
+  min-height: 150px;
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+
+  box-shadow: 0 6px 18px rgba(15, 39, 71, 0.04);
+}
+
+.home-workflow-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  margin-bottom: 16px;
+
+  border-radius: 50%;
+
+  background: #eef9f7;
+  color: #0f9d8a;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.home-workflow-card h3 {
+  margin: 0 0 8px;
+
+  color: #0f2747;
+
+  font-size: 16px;
+}
+
+.home-workflow-card p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   SECURITY / PLATFORM CAPABILITIES
+   ========================================================= */
+
+.home-security-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.home-security-card {
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+
+  box-shadow: 0 6px 18px rgba(15, 39, 71, 0.04);
+}
+
+.home-security-card h3 {
+  margin: 0 0 8px;
+
+  color: #0f2747;
+
+  font-size: 15px;
+}
+
+.home-security-card p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   ROLE CARDS
+   ========================================================= */
+
+.home-role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.home-role-card {
+  padding: 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+
+  box-shadow: 0 6px 18px rgba(15, 39, 71, 0.04);
+}
+
+.home-role-card h3 {
+  margin: 0 0 8px;
+
+  color: #0f2747;
+
+  font-size: 17px;
+}
+
+.home-role-card p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   PERFORMANCE SECTION
+   ========================================================= */
+
+.home-performance {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 64px 0;
+
+  border-top: 1px solid #e4e7ec;
+}
+
+.home-performance-header {
+  margin-bottom: 24px;
+}
+
+.home-performance-header h2 {
+  margin: 0 0 8px;
+
+  color: #172033;
+
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.home-performance-header p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.home-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.home-metric-card {
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e7ec;
+  border-radius: 10px;
+
+  box-shadow: 0 6px 18px rgba(15, 39, 71, 0.04);
+}
+
+.home-metric-card span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #667085;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.home-metric-card strong {
+  display: block;
+
+  color: #0f2747;
+
+  font-size: 24px;
+  line-height: 1.1;
+}
+
+.home-metric-note {
+  margin-top: 14px;
+
+  color: #667085;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.home-cta {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 64px 0;
+}
+
+.home-cta-card {
+  padding: 38px;
+
+  background: #eef9f7;
+
+  border: 1px solid #b8deda;
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+.home-cta-card h2 {
+  margin: 0 0 8px;
+
+  color: #0f2747;
+
+  font-size: 27px;
+}
+
+.home-cta-card p {
+  max-width: 600px;
+
+  margin: 0 auto 20px;
+
+  color: #667085;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.home-footer {
+  width: min(1120px, calc(100% - 48px));
+  margin: 0 auto;
+
+  padding: 24px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #e4e7ec;
+
+  color: #667085;
+  font-size: 12px;
+}
+
+.home-footer strong {
+  color: #0f2747;
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .home-workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-security-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-metrics-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .home-workflow-grid,
+  .home-security-grid,
+  .home-role-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-performance,
+  .home-cta {
+    padding: 48px 0;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+  .home-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,57 @@
+/* Error Page */
+.error-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.error-content {
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  padding: 60px 40px;
+  max-width: 500px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.error-code {
+  font-size: 80px;
+  font-weight: 700;
+  color: #667eea;
+  margin: 0 0 16px 0;
+  line-height: 1;
+}
+
+.error-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 12px 0;
+}
+
+.error-message {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 32px 0;
+}
+
+.error-page .btn {
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .error-content {
+    padding: 40px 24px;
+  }
+
+  .error-code {
+    font-size: 60px;
+  }
+
+  .error-title {
+    font-size: 22px;
+  }
+}
