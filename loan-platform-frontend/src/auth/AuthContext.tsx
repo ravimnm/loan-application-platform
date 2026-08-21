@@ -104,15 +104,29 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     async (otp: string) => {
       try {
         setIsLoading(true);
-
+  
         if (!user?.email) {
           throw new Error('Email is required for verification');
         }
-
-        await authApi.verifyEmail({
+  
+        console.log('EMAIL VERIFY:', {
+          email: user.email,
+          otp
+        });
+  
+        const response = await authApi.verifyEmail({
           email: user.email,
           otp,
         });
+  
+        console.log('EMAIL VERIFY SUCCESS:', response);
+  
+        return response;
+  
+      } catch (error) {
+        console.error('EMAIL VERIFY FAILED:', error);
+        throw error;
+  
       } finally {
         setIsLoading(false);
       }
