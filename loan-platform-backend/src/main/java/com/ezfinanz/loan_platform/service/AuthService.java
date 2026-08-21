@@ -54,6 +54,15 @@ public class AuthService {
 
 	public RegistrationResponse register(RegisterRequest request) {
 
+		System.out.println(
+		    "REGISTER EMAIL RECEIVED: [" + request.email() + "]"
+		);
+		
+		System.out.println(
+		    "EMAIL EXISTS: " +
+		    userRepository.existsByEmail(request.email())
+		);
+
 	    if (userRepository.existsByEmail(request.email())) {
 	        throw new RuntimeException(
 	                "Email already registered"
