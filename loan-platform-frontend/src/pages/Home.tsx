@@ -302,59 +302,140 @@ export const Home: React.FC = () => {
       {/* =========================================================
           PERFORMANCE
           ========================================================= */}
-
+      
       <section className="home-section home-performance">
-
+      
         <div className="home-section-header">
           <span className="home-eyebrow">
             Performance testing
           </span>
-
+      
           <h2>
             Tested under a 1,000-VU load
           </h2>
-
+      
           <p>
-            The backend was locally load-tested using k6 with a
-            staged workload reaching 1,000 virtual users.
+            EZFinanz was load tested using k6 with a staged workload
+            reaching 1,000 virtual users to evaluate API reliability
+            and response performance.
           </p>
         </div>
-
-        <div className="home-metrics-grid">
-
-          <div className="home-metric-card">
-            <strong>1,000</strong>
-            <span>Maximum VUs</span>
+      
+        {/* =========================================================
+            ADMIN / BACKEND TEST
+            ========================================================= */}
+      
+        <div className="home-performance-result">
+      
+          <div className="home-performance-result-header">
+            <div>
+              <span className="home-performance-label">
+                Backend load test
+              </span>
+      
+              <h3>Administrative API performance</h3>
+            </div>
+      
+            <span className="home-performance-test">
+              k6 · 1,000 VUs
+            </span>
           </div>
-
-          <div className="home-metric-card">
-            <strong>62K+</strong>
-            <span>HTTP requests</span>
+      
+          <div className="home-metrics-grid">
+      
+            <article className="home-metric-card">
+              <strong>1,000</strong>
+              <span>Maximum VUs</span>
+            </article>
+      
+            <article className="home-metric-card">
+              <strong>62K+</strong>
+              <span>HTTP requests</span>
+            </article>
+      
+            <article className="home-metric-card">
+              <strong>298</strong>
+              <span>Requests / second</span>
+            </article>
+      
+            <article className="home-metric-card">
+              <strong>0%</strong>
+              <span>HTTP failures</span>
+            </article>
+      
+            <article className="home-metric-card">
+              <strong>4.12s</strong>
+              <span>P95 latency</span>
+            </article>
+      
           </div>
-
-          <div className="home-metric-card">
-            <strong>298</strong>
-            <span>Requests / second</span>
-          </div>
-
-          <div className="home-metric-card">
-            <strong>0%</strong>
-            <span>HTTP failures</span>
-          </div>
-
-          <div className="home-metric-card">
-            <strong>4.12s</strong>
-            <span>p95 latency</span>
-          </div>
-
+      
         </div>
-
-        <p className="home-performance-note">
-          Local load-test result using the current development
-          configuration. Performance can vary depending on hardware,
-          deployment environment and workload.
-        </p>
-
+      
+      
+        {/* =========================================================
+            USER / CUSTOMER TEST
+            ========================================================= */}
+      
+        <div className="home-performance-result">
+      
+          <div className="home-performance-result-header">
+            <div>
+              <span className="home-performance-label">
+                End-to-end load test
+              </span>
+      
+              <h3>Customer API performance</h3>
+            </div>
+      
+            <span className="home-performance-test">
+              k6 · 1,000 VUs · 3m 30s
+            </span>
+          </div>
+      
+          <div className="home-metrics-grid">
+      
+            <article className="home-metric-card">
+              <strong>1,000</strong>
+              <span>Maximum VUs</span>
+            </article>
+      
+            <article className="home-metric-card">
+              <strong>114K+</strong>
+              <span>HTTP requests</span>
+            </article>
+      
+            <article className="home-metric-card">
+              <strong>543</strong>
+              <span>Requests / second</span>
+            </article>
+      
+            <article className="home-metric-card">
+              <strong>0%</strong>
+              <span>HTTP failures</span>
+            </article>
+      
+            <article className="home-metric-card">
+              <strong>2.04s</strong>
+              <span>P95 latency</span>
+            </article>
+      
+          </div>
+      
+          <div className="home-performance-note">
+            <strong>Load test result</strong>
+      
+            <p>
+              The platform maintained a 0% HTTP failure rate while
+              processing approximately 543 requests per second.
+              The measured P95 latency was 2.04 seconds, indicating
+              that further response-time optimization is an area
+              for continued improvement.
+            </p>
+          </div>
+      
+        </div>
+      
       </section>
 
 
@@ -419,74 +500,6 @@ export const Home: React.FC = () => {
 
         </div>
       </section>
-      <section className="home-section home-performance">
-        <div className="home-section-header">
-          <span className="home-eyebrow">
-            Performance & reliability
-          </span>
-
-          <h2>
-            Tested under real load
-          </h2>
-
-          <p>
-            EZFinanz was load tested with up to 1,000 concurrent
-            virtual users using k6 to evaluate API reliability and
-            response performance.
-          </p>
-        </div>
-
-        <div className="home-performance-grid">
-
-          <article className="home-metric-card">
-            <strong>1,000</strong>
-            <span>Max concurrent users</span>
-          </article>
-
-          <article className="home-metric-card">
-            <strong>114K+</strong>
-            <span>Requests processed</span>
-          </article>
-
-          <article className="home-metric-card">
-            <strong>543</strong>
-            <span>Requests / second</span>
-          </article>
-
-          <article className="home-metric-card">
-            <strong>0%</strong>
-            <span>HTTP request failures</span>
-          </article>
-
-          <article className="home-metric-card">
-            <strong>2.04s</strong>
-            <span>P95 latency</span>
-          </article>
-
-          <article className="home-metric-card">
-            <strong>3.17s</strong>
-            <span>Maximum latency</span>
-          </article>
-
-        </div>
-
-        <div className="home-performance-note">
-          <strong>Load test result</strong>
-
-          <p>
-            The platform maintained a 0% HTTP failure rate while
-            processing approximately 543 requests per second.
-            The measured P95 latency was 2.04 seconds, indicating
-            that further response-time optimization is an area for
-            continued improvement.
-          </p>
-
-          <span>
-            Tested with k6 · 1,000 virtual users · 3m 30s
-          </span>
-        </div>
-      </section>
-
 
       {/* =========================================================
           FINAL CTA
