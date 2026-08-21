@@ -185,7 +185,9 @@ export interface Application {
 
   eligibility?: EligibilityResult;
 
-  emi?: EMICalculationResult;
+  emi?: number;
+  totalInterest?: number;
+  totalRepayment?: number;
 
   bankAccount?: BankAccountData;
 
