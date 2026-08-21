@@ -41,7 +41,8 @@ export const VerifyEmail: React.FC = () => {
       );
     } finally {
       setIsLoading(false);
-    };
+    }
+  };
 
   return (
     <div className="auth-container">
