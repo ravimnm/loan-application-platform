@@ -101,7 +101,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   );
 
   const verifyEmail = useCallback(
-    async (otp: string) => {
+    async (otp: string) : Promise<void> => {
       try {
         setIsLoading(true);
   
