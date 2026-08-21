@@ -30,7 +30,7 @@ export const VerifyEmail: React.FC = () => {
     
       await verifyEmail(otp);
     
-      navigate('/verify-phone', { replace: true });
+      navigate('/dashboard', { replace: true });
     
     } catch (err: unknown) {
       setError(
