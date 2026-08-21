@@ -110,11 +110,19 @@ public class AuthService {
 	            );
 
 	    otpRepository.save(emailVerification);
+		
+				
+		System.out.println("========================================");
+		System.out.println("EMAIL OTP");
+		System.out.println("Email: " + user.getEmail());
+		System.out.println("OTP: " + emailOtp);
+		System.out.println("Expires in: 5 minutes");
+		System.out.println("========================================");
 
-	    emailService.sendOtp(
-	            user.getEmail(),
-	            emailOtp
-	    );
+	    // emailService.sendOtp(
+	    //         user.getEmail(),
+	    //         emailOtp
+	    // );
 
 	    // =========================
 	    // PHONE OTP -- Temporarily Disabled
@@ -263,11 +271,18 @@ public class AuthService {
 	            );
 
 	    otpRepository.save(emailVerification);
-
-	    emailService.sendOtp(
-	            user.getEmail(),
-	            emailOtp
-	    );
+		
+		System.out.println("========================================");
+		System.out.println("EMAIL OTP RESENT");
+		System.out.println("Email: " + user.getEmail());
+		System.out.println("OTP: " + emailOtp);
+		System.out.println("Expires in: 5 minutes");
+		System.out.println("========================================");
+				
+	    // emailService.sendOtp(
+	    //         user.getEmail(),
+	    //         emailOtp
+	    // );
 
 	    return "A new verification OTP has been sent to your email";
 	}
