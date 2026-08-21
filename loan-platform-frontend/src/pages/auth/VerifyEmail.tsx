@@ -28,7 +28,7 @@ export const VerifyEmail: React.FC = () => {
     try {
       setIsLoading(true);
       await verifyEmail(otp);
-      navigate('/login');
+      navigate('/verify-phone');
     } catch (err: unknown) {
       setError(getAuthErrorMessage(err, 'Email verification failed. Please check the OTP and try again.'));
     } finally {
