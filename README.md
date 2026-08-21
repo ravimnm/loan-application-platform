@@ -342,7 +342,8 @@ DTOs define request and response structures.
 - PostgreSQL
 - Maven
 - Jakarta Validation
-
+- Spring Security OAuth2 Client
+- Google OAuth 2.0
 ---
 
 ## Frontend Technology
@@ -473,10 +474,19 @@ WITHDRAWN
 
 ## Security
 
-The backend uses JWT-based authentication.
+The backend uses JWT-based and oAuth2 authentication.
+
+### Authentication
+
+The platform supports:
+
+- JWT-based authentication
+- Google OAuth 2.0 login
+- Role-based authorization
+- Customer, Admin, and Super Admin access control
 
 Authentication flow:
-
+Jwt flow
 ```text
 Login
   |
@@ -498,7 +508,27 @@ JwtAuthenticationFilter
   v
 Authenticated request
 ```
+OAuth2 flow 
+```
+User selects "Sign in with Google"
+  |
+  v
+Spring Security OAuth2 Client
+  |
+  v
+Google Authorization
+  |
+  v
+OAuth2 callback
+  |
+  v
+User authenticated
+  |
+  v
+Application session/JWT handling
+```
 
+- 
 Role-based authorization prevents users from accessing endpoints outside their responsibilities.
 
 Examples:
@@ -609,6 +639,17 @@ Disburse approved application
 Rejection reasons are retained with the application.
 
 ---
+### Environment Configuration
+
+The application uses environment variables for sensitive configuration:
+
+- PostgreSQL credentials
+- JWT secret
+- Gmail SMTP credentials
+- MessageCentral credentials
+- Google OAuth2 credentials
+- Frontend URL
+
 
 ## Performance Testing
 
