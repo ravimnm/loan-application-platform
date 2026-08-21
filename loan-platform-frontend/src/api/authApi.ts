@@ -24,8 +24,7 @@ export const authApi = {
   },
 
   verifyEmail: async (data: VerifyEmailRequest): Promise<void> => {
-    const response = await client.post<string>('/api/auth/verify-email', data);
-    return response.data;
+    await client.post('/api/auth/verify-email', data);
   },
 
   resendEmailOtp: async (email: string): Promise<string> => {
