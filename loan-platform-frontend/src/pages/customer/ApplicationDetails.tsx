@@ -341,7 +341,7 @@ export const CustomerApplicationDetails: React.FC = () => {
         </section>
       )}
 
-      {application.emi && (
+      {application.emi !=null && (
         <section className="application-status-card">
 
           <div className="status-card-header">
@@ -362,7 +362,7 @@ export const CustomerApplicationDetails: React.FC = () => {
               </span>
 
               <span className="summary-value">
-                ₹{application.emi.monthlyEmi?.toLocaleString('en-IN')}
+                ₹{application.emi.toLocaleString('en-IN')}
               </span>
             </div>
 
@@ -372,7 +372,7 @@ export const CustomerApplicationDetails: React.FC = () => {
               </span>
 
               <span className="summary-value">
-                ₹{application.emi.totalInterest?.toLocaleString('en-IN')}
+                ₹{application.totalInterest?.toLocaleString('en-IN')}
               </span>
             </div>
 
@@ -382,7 +382,7 @@ export const CustomerApplicationDetails: React.FC = () => {
               </span>
 
               <span className="summary-value">
-                ₹{application.emi.totalRepayment?.toLocaleString('en-IN')}
+                ₹{application.totalRepayment?.toLocaleString('en-IN')}
               </span>
             </div>
 
